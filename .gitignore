@@ -35,3 +35,18 @@ go_game-*.tar
 npm-debug.log
 /assets/node_modules/
 
+# macOS
+.DS_Store
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Editor/IDE
+.elixir_ls/
+.vscode/
+.idea/
+
+# Fly.io
+.fly/
