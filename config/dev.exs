@@ -1,11 +1,12 @@
 import Config
 
 # Configure your database
+# Load credentials from environment variables (see .env file)
 config :go_game, GoGame.Repo,
-  hostname: "ep-plain-boat-a1wm39c9-pooler.ap-southeast-1.aws.neon.tech",
-  database: "neondb",
-  username: "neondb_owner",
-  password: "npg_quH5kI1PlYQG",
+  hostname: System.get_env("DATABASE_HOST") || "localhost",
+  database: System.get_env("DATABASE_NAME") || "go_game_dev",
+  username: System.get_env("DATABASE_USER") || "postgres",
+  password: System.get_env("DATABASE_PASSWORD") || "postgres",
   stacktrace: true,
   show_sensitive_data_on_connection_error: true,
   pool_size: 10,
@@ -25,7 +26,7 @@ config :go_game, GoGameWeb.Endpoint,
   check_origin: false,
   code_reloader: true,
   debug_errors: true,
-  secret_key_base: "ql+OWFcwPeD49jqGANafDb3ZV6narL3VjTAu21UHYACMJNblB4Ijnr7834hmD+rm",
+  secret_key_base: System.get_env("SECRET_KEY_BASE") || "ql+OWFcwPeD49jqGANafDb3ZV6narL3VjTAu21UHYACMJNblB4Ijnr7834hmD+rm",
   watchers: [
     esbuild: {Esbuild, :install_and_run, [:go_game, ~w(--sourcemap=inline --watch)]},
     tailwind: {Tailwind, :install_and_run, [:go_game, ~w(--watch)]}
