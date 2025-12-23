@@ -2,15 +2,15 @@ import Config
 
 # Configure your database
 config :go_game, GoGame.Repo,
-  hostname: "ep-lucky-scene-a18pfrkh-pooler.ap-southeast-1.aws.neon.tech",
+  hostname: "ep-plain-boat-a1wm39c9-pooler.ap-southeast-1.aws.neon.tech",
   database: "neondb",
   username: "neondb_owner",
-  password: "npg_q2OWbxJfFml7",
+  password: "npg_quH5kI1PlYQG",
   stacktrace: true,
   show_sensitive_data_on_connection_error: true,
   pool_size: 10,
   ssl: true
-  
+
 
 # For development, we disable any cache and enable
 # debugging and code reloading.
